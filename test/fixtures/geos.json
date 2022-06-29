@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "id": 6602767,
+      "name": "Taiwan Cypress",
+      "latitude": 23.61556,
+      "longitude": 120.8075,
+      "elevation": 1893,
+      "feature_code": "PRK",
+      "country_code": "TW",
+      "admin1_id": 7280291,
+      "admin2_id": 1671564,
+      "admin3_id": 1677096,
+      "admin4_id": 11702447,
+      "timezone": "Asia/Taipei",
+      "country_id": 1668284,
+      "country": "Taiwan",
+      "admin1": "Taiwan",
+      "admin2": "Nantou",
+      "admin3": "Zhushan",
+      "admin4": "Da'an"
+    }
+  ],
+  "generationtime_ms": 0.41007996
+}

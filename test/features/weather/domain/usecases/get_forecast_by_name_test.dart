@@ -16,10 +16,12 @@ void main() {
   });
 
   const tlocationName = 'Taiwan';
+  const tTemperature = 28.0;
   final tWeather = Weather(
     condition: WeatherCondition.unknown,
     lastUpdated: DateTime(1),
     location: tlocationName,
+    temperature: tTemperature,
   );
 
   group('Usecase: GetForecastByName', () {

@@ -51,11 +51,13 @@ void main() {
       const tLongitude = 1.0;
       const tLatitude = 2.0;
       const tWeatherCode = WeatherCode.clearSky;
+      const tTemperature = 28.0;
       final tLastUpdated = DateTime(2022, 06, 24, 08);
       final tWeather = Weather(
         condition: WeatherCondition.clear,
         lastUpdated: tLastUpdated,
         location: tName,
+        temperature: tTemperature,
       );
       test('check If the device is online', () async {
         // arrange
@@ -221,6 +223,7 @@ void main() {
           final mockWeatherInfoModel = MockWeatherInfoModel();
           when(() => mockWeatherInfoModel.lastUpdated).thenReturn(tLastUpdated);
           when(() => mockWeatherInfoModel.weatherCode).thenReturn(tWeatherCode);
+          when(() => mockWeatherInfoModel.temperature).thenReturn(tTemperature);
           when(() => mockWeatherModel.currentWeather)
               .thenReturn(mockWeatherInfoModel);
           when(() => mockGeoModel.longitude).thenReturn(tLongitude);
@@ -258,6 +261,7 @@ void main() {
           final mockWeatherInfoModel = MockWeatherInfoModel();
           when(() => mockWeatherInfoModel.lastUpdated).thenReturn(tLastUpdated);
           when(() => mockWeatherInfoModel.weatherCode).thenReturn(tWeatherCode);
+          when(() => mockWeatherInfoModel.temperature).thenReturn(tTemperature);
           when(() => mockWeatherModel.currentWeather)
               .thenReturn(mockWeatherInfoModel);
           when(() => localDataSource.getLastWeather())
@@ -280,6 +284,7 @@ void main() {
           final mockWeatherInfoModel = MockWeatherInfoModel();
           when(() => mockWeatherInfoModel.lastUpdated).thenThrow(tLastUpdated);
           when(() => mockWeatherInfoModel.weatherCode).thenReturn(tWeatherCode);
+          when(() => mockWeatherInfoModel.temperature).thenReturn(tTemperature);
           when(() => mockWeatherModel.currentWeather)
               .thenReturn(mockWeatherInfoModel);
           when(() => localDataSource.getLastWeather())
@@ -300,6 +305,7 @@ void main() {
           final mockWeatherInfoModel = MockWeatherInfoModel();
           when(() => mockWeatherInfoModel.lastUpdated).thenThrow(tLastUpdated);
           when(() => mockWeatherInfoModel.weatherCode).thenReturn(tWeatherCode);
+          when(() => mockWeatherInfoModel.temperature).thenReturn(tTemperature);
           when(() => mockWeatherModel.currentWeather)
               .thenReturn(mockWeatherInfoModel);
           when(() => localDataSource.getLastWeather())

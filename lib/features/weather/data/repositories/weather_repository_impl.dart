@@ -34,6 +34,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
           condition: forecastWeather.currentWeather.weatherCode.toCondition,
           lastUpdated: forecastWeather.currentWeather.lastUpdated,
           location: firstGeo.name,
+          temperature: forecastWeather.currentWeather.temperature,
         );
         return Right(weather);
       } catch (_) {
@@ -48,6 +49,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
           condition: weatherModel.currentWeather.weatherCode.toCondition,
           lastUpdated: weatherModel.currentWeather.lastUpdated,
           location: name,
+          temperature: weatherModel.currentWeather.temperature,
         );
 
         return Right(weather);

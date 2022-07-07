@@ -16,3 +16,13 @@ class WeatherSearched extends WeatherEvent {
   @override
   List<Object> get props => [super.props, keyword];
 }
+
+class WeatherUnitChanged extends WeatherEvent {
+  final TemperatureUnits units;
+  const WeatherUnitChanged({
+    required this.units,
+  });
+
+  @override
+  List<Object> get props => [super.props, units];
+}

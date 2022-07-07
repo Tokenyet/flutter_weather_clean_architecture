@@ -6,6 +6,7 @@ import 'package:flutter_weather_clean_architecture/features/weather/domain/repos
 import 'package:flutter_weather_clean_architecture/features/weather/domain/usecases/get_forecast_by_name.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/presentation/bloc/weather_bloc.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/presentation/pages/search_page.dart';
+import 'package:flutter_weather_clean_architecture/features/weather/presentation/pages/settings_page.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/presentation/widgets/weather_empty.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/presentation/widgets/weather_error.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/presentation/widgets/weather_loading.dart';
@@ -50,6 +51,16 @@ class _WeatherViewState extends State<WeatherView> {
         title: const Text('Flutter Weather'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () async {
+              final units = await Navigator.of(context)
+                  .push(SettingsPage.route(_weatherBloc.state.units));
+              if (units != null) {
+                _weatherBloc.add(WeatherUnitChanged(units: units));
+              }
+            },
+          ),
+          IconButton(
               onPressed: () async {
                 final city =
                     await Navigator.of(context).push(SearchPage.route());
@@ -75,7 +86,9 @@ class _WeatherViewState extends State<WeatherView> {
                         condition: WeatherCondition.clear,
                         lastUpdated: DateTime(1),
                         location: 'Unknown',
+                        temperature: -87.0,
                       ),
+                  units: state.units,
                 );
               case NetworkStatus.failure:
               default:

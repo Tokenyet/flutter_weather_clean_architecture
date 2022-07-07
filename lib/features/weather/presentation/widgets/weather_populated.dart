@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_clean_architecture/core/presentation/temperature_units.dart';
 import 'package:flutter_weather_clean_architecture/features/weather/domain/entities/weather.dart';
 
 class WeatherPopulated extends StatelessWidget {
   const WeatherPopulated({
     Key? key,
+    required this.units,
     required this.weather,
   }) : super(key: key);
 
   final Weather weather;
+  final TemperatureUnits units;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +31,12 @@ class WeatherPopulated extends StatelessWidget {
                   weather.location,
                   style: theme.textTheme.headline2?.copyWith(
                     fontWeight: FontWeight.w200,
+                  ),
+                ),
+                Text(
+                  '''${weather.temperature.toStringAsPrecision(2)}°${units.isCelsius ? 'C' : 'F'}''',
+                  style: theme.textTheme.headline3?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(

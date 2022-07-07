@@ -1,16 +1,7 @@
 # flutter_weather_clean_architecture
 
-A new Flutter project.
+The concept of the project is [resocoder's clean architecture](https://resocoder.com/flutter-clean-architecture-tdd). This project is for learning purpose, that certainly follow [felangel's weather tutorial](https://bloclibrary.dev/#/flutterweathertutorial), so that means the state managment using [Bloc](https://bloclibrary.dev/).
 
-## Getting Started
+## Different
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The main difference between [the original tutorial](https://bloclibrary.dev/#/flutterweathertutorial) with the project is the architecture, and the api. Api use [open-meteo](https://open-meteo.com/) as our free weather api since the metaweather is no longer reachable for public. Architecture by my opinion, I prefer the structure of felangel's, but for learning purpose, I try clean architecture on this project.

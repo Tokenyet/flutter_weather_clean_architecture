@@ -4,4 +4,4 @@ The concept of the project is [resocoder's clean architecture](https://resocoder
 
 ## Difference
 
-The main difference between [the original tutorial](https://bloclibrary.dev/#/flutterweathertutorial) with the project is the architecture, and the api. Api use [open-meteo](https://open-meteo.com/) as our free weather api since the metaweather is no longer reachable for public. Architecture by my opinion, I prefer the structure of felangel's, but for learning purpose, I try clean architecture on this project.
+The main difference between [the original tutorial](https://bloclibrary.dev/#/flutterweathertutorial) with the project are the architecture and the api. Api use [open-meteo](https://open-meteo.com/) as our free weather api since the metaweather is no longer reachable for public. Architecture by my opinion, I prefer the structure of felangel's, but for learning purpose, I try clean architecture on this project.
